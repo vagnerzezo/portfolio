@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://vagnerzezo.vercel.app/sitemap.xml

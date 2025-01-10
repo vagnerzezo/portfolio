@@ -91,7 +91,7 @@
                     <div
                          class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
                          <div class="relative z-10 size-6 flex justify-center items-center">
-                              <img src="@/assets/img/manux.webp" alt="Logo">
+                              <img src="@/assets/img/manux.webp" alt="Logo" height="40" width="40">
                          </div>
                     </div>
                     <!-- End Icon -->
@@ -220,7 +220,7 @@
                     <div
                          class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
                          <div class="relative z-10 size-6 flex justify-center items-center">
-                              <img src="@/assets/img/linx.svg" alt="Logo">
+                              <img src="@/assets/img/linx.svg" alt="Logo" height="40" width="40">
                          </div>
                     </div>
                     <!-- End Icon -->
