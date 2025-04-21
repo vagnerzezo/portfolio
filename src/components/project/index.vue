@@ -4,6 +4,16 @@
    Projetos
   </h2>
   <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+   <a class="group block relative overflow-hidden rounded-lg border" href="https://krrepresentacao.vercel.app/">
+    <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/kr.webp"
+     alt=" Project">
+    <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+     <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
+      <span class="text-xs">KR representacao</span>
+     </div>
+    </div>
+   </a>
+
    <a class="group block relative overflow-hidden rounded-lg border" href="https://commercevz.vercel.app/">
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/techz.webp"
      alt=" Project">
