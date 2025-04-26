@@ -16,10 +16,13 @@
        <path d="M36 0H4C1.79086 0 0 1.79086 0 4V36C0 38.2091 1.79086 40 4 40H36C38.2091 40 40 38.2091 40 36V4C40 1.79086 38.2091 0 36 0Z" fill="white" data-astro-cid-2j44jlrm=""></path>
        <path d="M15.6672 12L11.333 19.8H20.0001L15.6672 12Z" fill="#000090" data-astro-cid-2j44jlrm=""></path>
        <path d="M24.3328 12L19.9995 19.8H28.667L24.3328 12Z" fill="#000090" data-astro-cid-2j44jlrm=""></path>
-       <path d="M28.6672 19.8L24.333 27.6H33.0001L28.6672 19.8Z" fill="#0000FF" data-astro-cid-2j44jlrm=""></path>
+       <path d="M28.6672 19.8L24.333 27.6H33.0001L28.6672 19.8Z" fill="#0000FF" data-astro-cid-2j44jlrm="">
+       </path>
        <path d="M11.3329 19.8L7 27.6H15.6671L11.3329 19.8Z" fill="#0000FF" data-astro-cid-2j44jlrm=""></path>
-       <path d="M19.9999 19.8L24.3328 12H15.667L19.9999 19.8Z" fill="#0000FF" data-astro-cid-2j44jlrm=""></path>
-       <path d="M15.6672 27.6L20.0001 19.8H11.333L15.6672 27.6Z" fill="#0000DC" data-astro-cid-2j44jlrm=""></path>
+       <path d="M19.9999 19.8L24.3328 12H15.667L19.9999 19.8Z" fill="#0000FF" data-astro-cid-2j44jlrm="">
+       </path>
+       <path d="M15.6672 27.6L20.0001 19.8H11.333L15.6672 27.6Z" fill="#0000DC" data-astro-cid-2j44jlrm="">
+       </path>
        <path d="M24.3329 27.6L28.6671 19.8H20L24.3329 27.6Z" fill="#0000DC" data-astro-cid-2j44jlrm=""></path>
       </g>
       <defs data-astro-cid-2j44jlrm="">
@@ -208,7 +211,7 @@
    <!-- Right Content -->
    <div class="grow pb-8 group-last:pb-0">
     <h3 class="mb-1 text-xs text-gray-600 ">
-     2021 - 2022
+     2018 - 2022
     </h3>
 
     <p class="font-semibold text-sm text-gray-800 ">
@@ -226,6 +229,44 @@
      para melhorar a visibilidade do site. Atuava na colaboração com a equipe para integrar o
      front-end com o back-end, garantir entregas dentro do prazo e orçamento, além de otimizar
      o desempenho das páginas, priorizando carregamento rápido e escalabilidade.</p>
+
+   </div>
+  </div>
+
+  <!-- Item -->
+  <div class="group relative flex gap-x-5">
+   <!-- Icon -->
+   <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+    <div class="relative z-10 size-6 flex justify-center items-center">
+     <img src="@/assets/img/econcept.svg" alt="Logo" height="40" width="40">
+    </div>
+   </div>
+   <!-- End Icon -->
+
+   <!-- Right Content -->
+   <div class="grow pb-8 group-last:pb-0">
+    <h3 class="mb-1 text-xs text-gray-600 ">
+     2017 - 2018
+    </h3>
+
+    <p class="font-semibold text-sm text-gray-800 ">
+     Analista de Marketplace na eConcept Design
+    </p>
+    <p class="mt-1 text-sm text-gray-600 ">
+      Agência especializada em desenvolvimento de e-commerce, focada em criar lojas virtuais de alta performance, design intuitivo e experiências de usuário otimizadas. 
+    </p>
+    <p class="mt-1 text-sm text-gray-600 ">
+     Era responsável por desenvolver estratégias para melhorar a visibilidade, posicionamento e performance dos produtos, com otimização de títulos, descrições e imagens.
+     Também realizava análise de concorrência e tendências de mercado para identificar oportunidades e ameaças.
+     Gerenciava o relacionamento com os marketplaces, atuando na comunicação, negociação e resolução de problemas.
+     <br>
+     Trabalhava em conjunto com os times de marketing, vendas, logística e atendimento para garantir uma operação eficiente e integrada.
+     Mantinha os catálogos de produtos, preços e estoques atualizados nas plataformas.
+     Era responsável por criar, monitorar e otimizar campanhas de mídia paga dentro dos marketplaces, com foco em performance.
+     Colaborava com a equipe de tecnologia para garantir integrações eficientes entre os sistemas internos e os marketplaces.
+     Prestava suporte e treinamento interno sobre boas práticas de atuação em marketplaces.
+     Realizava análises de dados com frequência, fornecendo insights estratégicos para tomada de decisão.
+    </p>
 
    </div>
   </div>
