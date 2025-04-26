@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between">
         <div class="flex shrink-0">
           <a aria-current="page" class="flex items-center uppercase" href="/">
-            <img src="@/assets/img/black-logo.svg" class="w-auto h-6" alt="Logo vagner zezo" />
+            <img src="@/assets/img/black-logo.svg" class="w-auto h-6" width="116" height="24" alt="Logo vagner zezo" />
           </a>
         </div>
         <div class="hidden md:flex md:items-center md:justify-center md:gap-5">

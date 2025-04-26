@@ -73,7 +73,7 @@
     </div>
    </div>
 
-   <a class="group block relative overflow-hidden rounded-lg border">
+   <div class="group block relative overflow-hidden rounded-lg border">
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/multisom.webp"
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
@@ -81,7 +81,7 @@
       <span class="text-xs">Multisom</span>
      </div>
     </div>
-   </a>
+   </div>
 
    <div class="group block relative overflow-hidden rounded-lg border">
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/schumann.webp"
