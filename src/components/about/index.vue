@@ -33,7 +33,7 @@
    uma integração perfeita entre as camadas do aplicativo.
   </p>
 
-  <ul class="mt-5 flex flex-row justify-between gap-y-3">
+  <ul class="mt-5 flex flex-col items-center md:flex-row justify-between gap-y-3">
    <li class="flex items-center gap-x-2.5">
     <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
