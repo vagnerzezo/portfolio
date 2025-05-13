@@ -8,7 +8,7 @@
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/kr.webp" alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">KR representacao</span>
+      <a href="https://krrepre.com.br/" class="text-xs">KR representacao</a>
      </div>
     </div>
    </div>
@@ -18,7 +18,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Zanque</span>
+      <a href="https://www.zanque.com.br/" class="text-xs">Zanque</a>
      </div>
     </div>
    </div>
@@ -28,7 +28,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Pet JR</span>
+      <a href="https://www.petjr.com.br/" class="text-xs">Pet JR</a>
      </div>
     </div>
    </div>
@@ -38,7 +38,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Lebes</span>
+      <a href="https://www.lebes.com.br/" class="text-xs">Lebes</a>
      </div>
     </div>
    </div>
@@ -48,7 +48,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Colcci</span>
+      <a href="https://www.colcci.com.br/" class="text-xs">Colcci</a>
      </div>
     </div>
    </div>
@@ -58,7 +58,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Coliseu</span>
+      <a href="https://www.coliseu.com.br/" class="text-xs">Coliseu</a>
      </div>
     </div>
    </div>
@@ -68,27 +68,17 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Docol</span>
+      <a href="https://www.docol.com.br/" class="text-xs">Docol</a>
      </div>
     </div>
    </div>
-
-   <a class="group block relative overflow-hidden rounded-lg border">
-    <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/multisom.webp"
-     alt=" Project">
-    <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
-     <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Multisom</span>
-     </div>
-    </div>
-   </a>
 
    <div class="group block relative overflow-hidden rounded-lg border">
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/schumann.webp"
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Schumann</span>
+      <a href="https://www.schumann.com.br/" class="text-xs">Schumann</a>
      </div>
     </div>
    </div>
@@ -98,7 +88,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Merito comercial</span>
+      <a href="https://meritocomercial.com.br/" class="text-xs">Merito comercial</a>
      </div>
     </div>
    </div>
@@ -108,7 +98,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Millenial Joias</span>
+      <a href="https://www.millenialjoias.com.br/" class="text-xs">Millenial Joias</a>
      </div>
     </div>
    </div>
@@ -118,7 +108,17 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <span class="text-xs">Super Epi</span>
+      <a href="https://superepi.com.br/" class="text-xs">Super Epi</a>
+     </div>
+    </div>
+   </div>
+
+   <div class="group block relative overflow-hidden rounded-lg border">
+    <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/multisom.webp"
+     alt=" Project">
+    <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+     <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
+      <a href="https://www.multisom.com.br/" class="text-xs">Multisom</a>
      </div>
     </div>
    </div>
