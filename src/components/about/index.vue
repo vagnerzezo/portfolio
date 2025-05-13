@@ -68,8 +68,8 @@
       <circle cx="12" cy="12" r="3.5" stroke="#000000"></circle>
      </g>
     </svg>
-    <a class="text-[13px] text-gray-600 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2  " href="https://www.instagram.com/vagnerxz/">
-     @vagnerxz
+    <a class="text-[13px] text-gray-600 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2  " href="https://www.instagram.com/vagnerzezo/">
+     @vagnerzezo
     </a>
    </li>
    <li class="flex items-center gap-x-2.5">
