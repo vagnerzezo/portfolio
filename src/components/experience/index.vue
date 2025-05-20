@@ -79,15 +79,15 @@
    </div>
    <!-- End Right Content -->
   </div>
-  <div class="group relative flex gap-x-5">
+  <!-- <div class="group relative flex gap-x-5">
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
     <div class="relative z-10 size-6 flex justify-center items-center">
      <img src="@/assets/img/manux.webp" alt="Logo" height="40" width="40">
     </div>
    </div>
-   <!-- End Icon -->
 
-   <!-- Right Content -->
+
+
    <div class="grow pb-8 group-last:pb-0">
     <h3 class="mb-1 text-xs text-gray-600 ">
      2024 - o momento
@@ -121,8 +121,8 @@
      </li>
     </ul>
    </div>
-   <!-- End Right Content -->
-  </div>
+
+  </div> -->
   <!-- End Item -->
 
   <!-- Item -->
