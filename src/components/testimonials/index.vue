@@ -32,7 +32,7 @@
                     <span class="text-sm text-gray-800 h-32 flex">
                          O zezo é um dos profissionais mais dedicados e talentosos que já conheci.
                          Como empresa, a Agliardi, e eu pessoalmente, somos imensamente gratos por todo o seu
-                         empenho, engajamento e paixão que coloca em tudo que faz.
+                         desempenho e engajamento que coloca em tudo que faz.
                     </span>
 
                     <a href="https://www.linkedin.com/in/lucasagliardi/" class="mt-3">

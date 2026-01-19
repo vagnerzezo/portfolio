@@ -8,7 +8,7 @@
     <img class="w-full size-40 object-cover bg-gray-100 rounded-lg " src="@/assets/img/project/kr.webp" alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://krrepre.com.br/" class="text-xs">KR representacao</a>
+      <a href="https://krrepre.com.br/" class="text-xs">KR representacao - pessoal</a>
      </div>
     </div>
    </div>
@@ -18,7 +18,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.zanque.com.br/" class="text-xs">Zanque</a>
+      <a href="https://www.zanque.com.br/" class="text-xs">Zanque - Agência agliardi</a>
      </div>
     </div>
    </div>
@@ -28,7 +28,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.petjr.com.br/" class="text-xs">Pet JR</a>
+      <a href="https://www.petjr.com.br/" class="text-xs">Pet JR - Agência agliardi</a>
      </div>
     </div>
    </div>
@@ -38,7 +38,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.lebes.com.br/" class="text-xs">Lebes</a>
+      <a href="https://www.lebes.com.br/" class="text-xs">Lebes - Agência Agrada</a>
      </div>
     </div>
    </div>
@@ -48,7 +48,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.colcci.com.br/" class="text-xs">Colcci</a>
+      <a href="https://www.colcci.com.br/" class="text-xs">Colcci - Agência Agrada</a>
      </div>
     </div>
    </div>
@@ -58,7 +58,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.coliseu.com.br/" class="text-xs">Coliseu</a>
+      <a href="https://www.coliseu.com.br/" class="text-xs">Coliseu - Agência Agrada</a>
      </div>
     </div>
    </div>
@@ -68,7 +68,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.docol.com.br/" class="text-xs">Docol</a>
+      <a href="https://www.docol.com.br/" class="text-xs">Docol - Agência Agrada</a>
      </div>
     </div>
    </div>
@@ -78,7 +78,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.schumann.com.br/" class="text-xs">Schumann</a>
+      <a href="https://www.schumann.com.br/" class="text-xs">Schumann - Agência Agrada</a>
      </div>
     </div>
    </div>
@@ -88,7 +88,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://meritocomercial.com.br/" class="text-xs">Merito comercial</a>
+      <a href="https://meritocomercial.com.br/" class="text-xs">Merito comercial - Agência Agliardi</a>
      </div>
     </div>
    </div>
@@ -98,7 +98,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.millenialjoias.com.br/" class="text-xs">Millenial Joias</a>
+      <a href="https://www.millenialjoias.com.br/" class="text-xs">Millenial Joias - Pessoal</a>
      </div>
     </div>
    </div>
@@ -108,7 +108,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://superepi.com.br/" class="text-xs">Super Epi</a>
+      <a href="https://superepi.com.br/" class="text-xs">Super Epi - Agência Agliardi</a>
      </div>
     </div>
    </div>
@@ -118,7 +118,7 @@
      alt=" Project">
     <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
      <div class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg ">
-      <a href="https://www.multisom.com.br/" class="text-xs">Multisom</a>
+      <a href="https://www.multisom.com.br/" class="text-xs">Multisom - Agência Agrada</a>
      </div>
     </div>
    </div>
