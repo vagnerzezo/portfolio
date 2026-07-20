@@ -16,10 +16,10 @@
  </div>
  <div class="mt-8">
   <p class="text-sm text-gray-600 ">
-   Olá! Eu sou Vagner zezo, um entusiasta de tecnologia apaixonado por criar experiências digitais
-   incríveis. Com uma base sólida em desenvolvimento Front-end e uma experiência robusta em e-commerce,
-   tenho um forte senso de design e UX, combinado com conhecimento em SEO e habilidades em
-   gerenciamento de projetos.
+   Olá! Me chamo Vagner zezo, sou front-end engineer com mais de 5 anos de experiência no desenvolvimento de aplicações web e e-
+commerce. Especialista em React, Next.js, Vue.js, Nuxt.js e TypeScript, com foco em arquitetura front-end,
+performance, SEO e experiência do usuário. Experiência em liderança técnica, integrações e entrega de
+soluções escaláveis alinhadas aos objetivos de negócio.
   </p>
 
   <p class="mt-3 text-sm text-gray-600 ">
@@ -27,11 +27,7 @@
    Tenho experiência com diversas plataformas de e-commerce, como Linx, Uappi, Shopify, WooCommerce, Tray e Nuvemshop.
   </p>
 
-  <p class="mt-3 text-sm text-gray-600 ">
-   Responsável pelo desenvolvimento e manutenção de interfaces de usuário excepcionais, utilizando
-   Vue.js, Nuxt.js e TypeScript. Colaborei estreitamente com equipes de design e back-end para garantir
-   uma integração perfeita entre as camadas do aplicativo.
-  </p>
+
 
   <ul class="mt-5 flex flex-col items-center md:flex-row justify-between gap-y-3">
    <li class="flex items-center gap-x-2.5">

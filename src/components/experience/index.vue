@@ -6,7 +6,36 @@
 
  <!-- Timeline -->
  <div>
-  <!-- Item -->
+
+  <div class="group relative flex gap-x-5">
+   <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+    <div class="relative z-10 size-6 flex justify-center items-center">
+     <img src="@/assets/img/manux.webp" alt="Logo" height="40" width="40">
+    </div>
+   </div>
+
+
+
+   <div class="grow pb-8 group-last:pb-0">
+    <h3 class="mb-1 text-xs text-gray-600 ">
+     2024 - o momento
+    </h3>
+
+    <p class="font-semibold text-sm text-gray-800 ">
+      Front-end engineer na Manux
+    </p>
+
+    <p class="mt-1 text-sm text-gray-600 ">
+      Atuação em conjunto com o time de projetos no desenvolvimento de soluções de e-commerce utilizando a arquitetura Headless da Manux. Desenvolvimento de aplicações com Vue.js, Nuxt.js, TypeScript e JavaScript, priorizando performance, SEO, escalabilidade e experiência do usuário.
+
+Responsável pela criação de componentes reutilizáveis e interfaces escaláveis, com desenvolvimento client-side e server-side, integração com APIs e serviços de back-end, otimização de aplicações e garantia da qualidade por meio de testes e da adoção de boas práticas de engenharia de software.
+
+Participação ativa na implementação de desenvolvimento assistido por Inteligência Artificial, utilizando Skills, Rules e agentes inteligentes para acelerar entregas, elevar a qualidade do código, automatizar processos e apoiar decisões técnicas durante o ciclo de desenvolvimento.
+    </p>
+   </div>
+
+  </div> 
+
   <div class="group relative flex gap-x-5">
    <!-- Icon -->
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
@@ -46,86 +75,16 @@
     </p>
 
     <p class="mt-1 text-sm text-gray-600 ">
-     Uma uma agência especializada em performance de e-commerce, com expertise em Arquitetura
-     de Soluções, Implantação de Negócios Digitais e foco na Evolução Contínua para impulsionar
-     resultados.
+        Atuação no desenvolvimento, manutenção e customização de lojas virtuais em plataformas como Linx Commerce, Nuvemshop, Shopify e Uappi, criando experiências digitais otimizadas e alinhadas aos objetivos estratégicos do negócio.
+        Experiência em projetos de  Headless Commerce, desenvolvendo front-ends desacoplados com Vue.js 3, Nuxt.js e Tailwind CSS, com foco em performance, escalabilidade, flexibilidade e excelência na experiência do usuário.
+        Responsável pelo desenvolvimento de integrações, implementação de funcionalidades estratégicas e configuração do Google Tag Manager (GTM), incluindo a criação de eventos personalizados, monitoramento da jornada do usuário e análise de métricas para otimização da conversão e da performance das aplicações.
     </p>
 
-    <ul class="list-disc ms-6 mt-3 space-y-1.5">
-     <li class="ps-1 text-sm text-gray-600 ">
-      Desenvolvimento e manutenção: Criar e manter lojas de e-commerce com foco em
-      performance e experiência do usuário, utilizando Vue.js, Nuxt.js, TypeScript e
-      tecnologias web.
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Funcionalidades interativas: Desenvolver componentes dinâmicos com JavaScript (Vue.js
-      e jQuery) para experiências fluidas.
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Integração com APIs: Conectar interfaces com back-end e serviços API usando Node.js.
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Otimização de desempenho: Melhorar velocidade, eficiência, carregamento rápido e SEO.
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Manutenção de código: Refatorar para legibilidade, qualidade e desempenho, aplicando
-      boas práticas.
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Testes e depuração: Realizar testes e corrigir bugs para garantir compatibilidade e
-      funcionalidade.
-     </li>
-    </ul>
+
    </div>
    <!-- End Right Content -->
   </div>
-  <!-- <div class="group relative flex gap-x-5">
-   <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-    <div class="relative z-10 size-6 flex justify-center items-center">
-     <img src="@/assets/img/manux.webp" alt="Logo" height="40" width="40">
-    </div>
-   </div>
 
-
-
-   <div class="grow pb-8 group-last:pb-0">
-    <h3 class="mb-1 text-xs text-gray-600 ">
-     2024 - o momento
-    </h3>
-
-    <p class="font-semibold text-sm text-gray-800 ">
-     Tech Lead na Manux
-    </p>
-
-    <p class="mt-1 text-sm text-gray-600 ">
-     Empresa com foco na solução headless focada em velocidade e personalização, que oferece
-     independência, redução de custos e processos simplificados para lojistas, empresas de
-     tecnologia e plataformas.
-    </p>
-
-    <ul class="list-disc ms-6 mt-3 space-y-1.5">
-     <li class="ps-1 text-sm text-gray-600 ">
-      Definir a visão técnica do projeto
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Garantir que a equipe esteja alinhada com os objetivos do negócio
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Orientar a equipe de desenvolvimento
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Gerenciar o projeto
-     </li>
-     <li class="ps-1 text-sm text-gray-600 ">
-      Antecipar, detectar e solucionar erros no produto
-     </li>
-    </ul>
-   </div>
-
-  </div> -->
-  <!-- End Item -->
-
-  <!-- Item -->
   <div class="group relative flex gap-x-5">
    <!-- Icon -->
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
@@ -152,20 +111,13 @@
     </p>
 
     <p class="mt-1 text-sm text-gray-600 ">
-     Agência especializada em desenvolvimento de e-commerce, focada em criar lojas virtuais,
-     design intuitivo e experiências de usuário otimizadas.
-    </p>
-    <p class="mt-1 text-sm text-gray-600 ">
-     Era responsável por criar layouts responsivos seguindo as melhores práticas de UI/UX,
-     implementar códigos HTML, CSS e JavaScript de alta qualidade, e aplicar técnicas de SEO
-     para melhorar a visibilidade do site.
+      Atuação no desenvolvimento de soluções para e-commerce, priorizando performance, escalabilidade e experiência do usuário. Experiência em projetos para plataformas líderes do mercado, como Linx Commerce, Nuvemshop, Shopify e Uappi, desenvolvendo funcionalidades, integrações e otimizações que impulsionam os resultados do negócio.
+      Desenvolvimento utilizando as tecnologias nativas de cada plataforma, incluindo Liquid (Shopify), a linguagem de templates da Linx Commerce, Vue.js 3 (Uappi), além de outras tecnologias e frameworks específicos do ecossistema de e-commerce, garantindo soluções aderentes às melhores práticas de cada plataforma.
     </p>
    </div>
    <!-- End Right Content -->
   </div>
-  <!-- End Item -->
 
-  <!-- Item -->
   <div class="group relative flex gap-x-5">
    <!-- Icon -->
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
@@ -198,7 +150,7 @@
 
    </div>
   </div>
-  <!-- Item -->
+
   <div class="group relative flex gap-x-5">
    <!-- Icon -->
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
@@ -233,7 +185,6 @@
    </div>
   </div>
 
-  <!-- Item -->
   <div class="group relative flex gap-x-5">
    <!-- Icon -->
    <div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
