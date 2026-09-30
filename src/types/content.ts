@@ -59,10 +59,32 @@ export interface Project {
   name: string;
   /** Onde o projeto foi feito, ex.: "Pessoal", "Agência Agliardi". */
   context: string;
+  /** Texto do projeto e do seu papel nele. Aparece só no modal (em "O projeto" quando não há `details`). */
+  description: string;
   year?: number | string;
   tags: string[];
   image: Image;
+  /** Site no ar ("Visitar projeto ↗" no modal). */
   href?: string;
+  /** Repositório ("Código ↗" no modal). */
+  repo?: string;
+  /** Linha de resumo abaixo do nome, no modal. */
+  summary?: string;
+  /** Blocos de texto do modal ("O projeto", "Arquitetura"...). Sem eles, o modal usa `description`. */
+  details?: ProjectDetail[];
+  /** Prints extras do modal. Sem eles, a galeria mostra só `image`. */
+  gallery?: GalleryItem[];
+}
+
+export interface ProjectDetail {
+  title: string;
+  body: string;
+}
+
+export interface GalleryItem {
+  image: Image;
+  /** Nome curto da tela, ex.: "Kanban" (vira a legenda das miniaturas). */
+  label: string;
 }
 
 export interface Service {

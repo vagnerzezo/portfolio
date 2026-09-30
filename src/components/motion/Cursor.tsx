@@ -52,6 +52,7 @@ export function Cursor() {
   return (
     <div
       ref={root}
+      data-cursor-root
       aria-hidden="true"
       className="pointer-events-none fixed top-0 left-0 z-[90] invisible opacity-0 [--size:0.75rem]"
     >

@@ -65,6 +65,9 @@ export function HorizontalPin({ total, header, children }: HorizontalPinProps) {
           const st = tween.scrollTrigger as ScrollTrigger;
           const card = cards.findIndex((item) => item.contains(event.target as Node));
           if (card < 0 || total < 2) return;
+          // Card já inteiro na tela (ex.: foco devolvido ao fechar o modal do case): não mexe no scroll.
+          const rect = cards[card].getBoundingClientRect();
+          if (rect.left >= 0 && rect.right <= window.innerWidth) return;
           st.scroll(st.start + ((st.end - st.start) * card) / (total - 1));
         };
         track.addEventListener("focusin", onFocus);

@@ -101,6 +101,11 @@
     outline-offset: 3px;
   }
 
+  /* Com um modal aberto o cursor custom (fora da top layer) ficaria preso atrás do fundo escuro. */
+  :root:has(dialog[open]) [data-cursor-root] {
+    display: none;
+  }
+
   /* Sobre fundo claro o anel de foco é ink (mantém a mesma cor do texto da seção). */
   .on-light :focus-visible {
     outline-color: var(--color-ink-900);
