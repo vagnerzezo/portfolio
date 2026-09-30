@@ -37,7 +37,7 @@ export function Education() {
                     {item.status === "em-andamento" ? <InProgress /> : null}
                   </p>
                   <div className="grid gap-2">
-                    <h4 className="font-display text-3xl leading-tight md:text-4xl">{item.degree}</h4>
+                    <h4 className="font-display text-3xl leading-tight md:text-3xl">{item.degree}</h4>
                     <p className="text-bone-dim">{item.institution}</p>
                   </div>
                 </li>

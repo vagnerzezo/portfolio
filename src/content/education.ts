@@ -8,6 +8,12 @@ export const education: EducationContent = {
       period: "2024 — atual",
       status: "em-andamento",
     },
+    {
+      institution: "Universidade do Vale do Rio dos Sinos (Unisinos)",
+      degree: "Certificado de Qualificação Profissional de Nível Tecnológico de Analista de Suporte, Gestão da Tecnologia da Informação",
+      period: "2024 — 2024",
+      status: "concluido",
+    },
   ],
   // Mais recente primeiro. Adicione `href` (link do certificado) para exibir o "Ver ↗".
   courses: [
