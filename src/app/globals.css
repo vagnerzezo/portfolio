@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+ * Tokens do design (Tailwind v4, config CSS-first).
+ * Cada --color-* vira utilitário (bg-ink-900, text-bone, border-line...).
+ * As fontes vêm do next/font como variáveis no <html> (--font-instrument-serif etc.);
+ * o `inline` faz o Tailwind usar var(...) direto, sem resolver no build.
+ */
+@theme inline {
+  --color-ink-950: #0a0a09;
+  --color-ink-900: #0f0f0e;
+  --color-ink-850: #141412;
+  --color-line: #2a2a27;
+  --color-line-strong: #3a3934;
+  --color-bone: #ece8df;
+  --color-bone-dim: #cfcac0;
+  --color-muted: #9c978c;
+  --color-faded: #6b675f;
+  --color-accent: #0702fe;
+  /* Versão clara do accent para TEXTO e anel de foco: o #0702FE tem só ~2,2:1 no fundo escuro
+     (reprova no AA). Este tom tem 4,8:1 no ink-900 e 4,6:1 no ink-850. O accent puro fica para
+     elementos decorativos (pontos, linhas, aspas, barra de progresso). */
+  --color-accent-text: #6f6cfe;
+
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+/* Pulso lento do ponto "Em andamento". Só roda com `motion-safe:` (movimento reduzido = ponto parado). */
+@theme {
+  --animate-pulse-slow: pulse-slow 2.4s ease-in-out infinite;
+
+  @keyframes pulse-slow {
+    50% {
+      opacity: 0.35;
+      transform: scale(0.7);
+    }
+  }
+}
+
+/* Container padrão das seções: largura máxima + respiro lateral fluido. */
+@utility shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1440px;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* Botões redondos do carrossel (48px: alvo de toque ≥ 44px). */
+@utility carousel-btn {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-bone);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  &:hover {
+    background-color: var(--color-bone);
+    color: var(--color-ink-950);
+  }
+}
+
+/* Rótulo de seção: "(01) Sobre" */
+@utility section-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-ink-900);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Texto claro sobre o accent azul (bone sobre #0702FE = 7:1; ink daria só 2,3:1). */
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bone);
+  }
+
+  /* Foco sempre visível no teclado (regra 6 de acessibilidade). */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-text);
+    outline-offset: 3px;
+  }
+
+  /* Sobre fundo claro o anel de foco é ink (mantém a mesma cor do texto da seção). */
+  .on-light :focus-visible {
+    outline-color: var(--color-ink-900);
+  }
+}
