@@ -11,8 +11,12 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="relative flex min-h-dvh flex-col justify-end overflow-hidden pt-28 pb-10 md:pb-14"
     >
-      <div className="pointer-events-none absolute top-1/2 right-[-6%] hidden aspect-square w-[min(50vw,90dvh,760px)] -translate-y-1/2 md:block">
-        <HeroSphereLoader triggerId="inicio" fallback={<SphereFallback className="size-full" />} />
+      <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <HeroSphereLoader
+          triggerId="inicio"
+          anchorClassName="absolute top-1/2 right-[-6%] aspect-square w-[min(50vw,90dvh,760px)] -translate-y-1/2"
+          fallback={<SphereFallback className="size-full" />}
+        />
       </div>
 
       <div className="shell relative grid gap-12 md:gap-16">

@@ -2,11 +2,17 @@
 
 import { PerformanceMonitor } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
 import { ScrollTrigger } from "@/lib/gsap";
 
 const COUNT = 7000;
+const CAMERA_Z = 3.1;
+const FOV = 45;
+// Altura visível no plano z = 0 (em unidades do mundo) para a câmera acima.
+const VIEW_HEIGHT = 2 * CAMERA_Z * Math.tan(((FOV / 2) * Math.PI) / 180);
+// Quanto do quadrado-âncora a esfera de raio 1 ocupa (igual a quando o canvas era o próprio quadrado).
+const SPHERE_FILL = 2 / VIEW_HEIGHT;
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
 // Pseudo-aleatório determinístico (0–1): mesmo resultado a cada render, sem Math.random.
@@ -61,15 +67,19 @@ void main() {
   p += normal * facing * 0.22 * clamp(length(uMouse) + 0.3, 0.0, 1.0);
 
   // Dissolve com o scroll: cada ponto se afasta numa velocidade própria.
-  p += normal * uDissolve * (0.5 + aRandom * 2.5);
+  p += normal * uDissolve * (0.5 + aRandom * 3.5);
   p.y += uDissolve * (aRandom - 0.5) * 1.6;
+
+  // Quanto mais longe do centro da esfera, mais apagado: as bolinhas somem ao se espalhar.
+  float spread = 1.0 - smoothstep(1.15, 3.6, length(p));
 
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
   gl_Position = projectionMatrix * mv;
-  gl_PointSize = 9.0 * uPixelRatio * (0.5 + aRandom * 0.8) / -mv.z;
+  // Limite no tamanho: pontos que chegam perto da câmera não viram discos gigantes.
+  gl_PointSize = min(9.0 * uPixelRatio * (0.5 + aRandom * 0.8) / -mv.z, 14.0 * uPixelRatio);
 
   float depth = smoothstep(-4.2, -2.2, mv.z);
-  vAlpha = (0.15 + depth * 0.85) * (1.0 - uDissolve);
+  vAlpha = (0.15 + depth * 0.85) * spread;
   vAccent = step(0.975, aRandom);
 }`;
 
@@ -94,12 +104,29 @@ const hex = (value: string) =>
     parseInt(value.slice(5, 7), 16) / 255,
   );
 
-function Particles({ triggerId }: { triggerId: string }) {
+function Particles({ triggerId, anchor }: { triggerId: string; anchor: RefObject<HTMLDivElement | null> }) {
+  const group = useRef<THREE.Group>(null);
   const points = useRef<THREE.Points>(null);
   const material = useRef<THREE.ShaderMaterial>(null);
   const mouse = useRef(new THREE.Vector2());
   const dissolve = useRef(0);
   const dpr = useThree((state) => state.viewport.dpr);
+  const size = useThree((state) => state.size);
+
+  // O canvas cobre o hero todo; posiciona e escala a esfera para coincidir com o quadrado-âncora
+  // (o mesmo lugar do fallback SVG), convertendo pixels em unidades do mundo no plano z = 0.
+  useEffect(() => {
+    const el = anchor.current;
+    const canvas = el?.parentElement;
+    if (!el || !canvas || !group.current || size.height === 0) return;
+    const a = el.getBoundingClientRect();
+    const c = canvas.getBoundingClientRect();
+    const unitsPerPx = VIEW_HEIGHT / size.height;
+    const cx = a.left - c.left + a.width / 2 - size.width / 2;
+    const cy = a.top - c.top + a.height / 2 - size.height / 2;
+    group.current.position.set(cx * unitsPerPx, -cy * unitsPerPx, 0);
+    group.current.scale.setScalar((a.width / 2) * unitsPerPx * SPHERE_FILL);
+  }, [anchor, size]);
 
   const geometry = useMemo(() => {
     const positions = new Float32Array(COUNT * 3);
@@ -165,21 +192,31 @@ function Particles({ triggerId }: { triggerId: string }) {
   });
 
   return (
-    <points ref={points} geometry={geometry}>
-      <shaderMaterial
-        ref={material}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-        uniforms={uniforms}
-        transparent
-        depthWrite={false}
-        blending={THREE.AdditiveBlending}
-      />
-    </points>
+    <group ref={group}>
+      <points ref={points} geometry={geometry}>
+        <shaderMaterial
+          ref={material}
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
+          uniforms={uniforms}
+          transparent
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </points>
+    </group>
   );
 }
 
-export default function HeroSphere({ triggerId, onReady }: { triggerId: string; onReady: () => void }) {
+export default function HeroSphere({
+  triggerId,
+  anchor,
+  onReady,
+}: {
+  triggerId: string;
+  anchor: RefObject<HTMLDivElement | null>;
+  onReady: () => void;
+}) {
   const container = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
   const [dpr, setDpr] = useState(1.75);
@@ -196,13 +233,13 @@ export default function HeroSphere({ triggerId, onReady }: { triggerId: string; 
       <Canvas
         dpr={[1, dpr]}
         frameloop={visible ? "always" : "never"}
-        camera={{ position: [0, 0, 3.1], fov: 45 }}
+        camera={{ position: [0, 0, CAMERA_Z], fov: FOV }}
         gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
         onCreated={() => onReady()}
         aria-hidden="true"
       >
         <PerformanceMonitor onDecline={() => setDpr(1)} />
-        <Particles triggerId={triggerId} />
+        <Particles triggerId={triggerId} anchor={anchor} />
       </Canvas>
     </div>
   );
