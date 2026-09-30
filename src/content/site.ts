@@ -32,17 +32,18 @@ export const site: SiteContent = {
     },
     text: {
       before: "Me chamo Vagner Zezo, sou ",
-      highlight: "front-end engineer com mais de 5 anos de experiência",
+      highlight: "front-end engineer com mais de 7 anos de experiência",
       after:
         " no desenvolvimento de aplicações web e e-commerce. Especialista em React, Next.js, Vue.js, Nuxt.js e TypeScript, com foco em arquitetura front-end, performance, SEO e experiência do usuário. Experiência em liderança técnica, integrações e entrega de soluções escaláveis alinhadas aos objetivos de negócio.",
     },
   },
   contact: {
-    email: "[PLACEHOLDER]@email.com",
+    email: "vagnerzezo@live.com",
     socials: [
-      { label: "LinkedIn", href: "[PLACEHOLDER]" },
-      { label: "GitHub", href: "[PLACEHOLDER]" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/vagner-xavier/" },
+      { label: "GitHub", href: "https://github.com/vagnerzezo" },
+      { label: "Instagram", href: "https://www.instagram.com/vagnerzezo/" },
     ],
   },
-  resumeUrl: "[PLACEHOLDER]",
+  resumeUrl: "",
 };

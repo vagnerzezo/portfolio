@@ -24,13 +24,15 @@ export function Experience() {
               Onde já <em>trabalhei</em>
             </h2>
           </div>
-          <ArrowLink
-            href={site.resumeUrl}
-            external
-            className="self-start border-b border-bone font-mono text-xs tracking-[0.08em] uppercase hover:no-underline"
-          >
-            Currículo completo
-          </ArrowLink>
+          {site.resumeUrl ? (
+            <ArrowLink
+              href={site.resumeUrl}
+              external
+              className="self-start border-b border-bone font-mono text-xs tracking-[0.08em] uppercase hover:no-underline"
+            >
+              Currículo completo
+            </ArrowLink>
+          ) : null}
         </div>
 
         <TimelineReveal className="lg:col-span-9">
