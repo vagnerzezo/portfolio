@@ -17,6 +17,7 @@ export const education: EducationContent = {
   ],
   // Mais recente primeiro. Adicione `href` (link do certificado) para exibir o "Ver ↗".
   courses: [
+    { title: "Desenvolvimento Assistido por IA Avançado", provider: "Tech Leads club", period: "2026 — 2026" },
     { title: "Desenvolvimento Web com Vue e Vuex", provider: "Udemy", period: "2023 — 2024" },
     { title: "Google Analytics Certification", provider: "Skillshop with Google", period: "2023 — 2024" },
     { title: "Business Manager", provider: "Meta Blueprint", period: "2022 — 2023" },

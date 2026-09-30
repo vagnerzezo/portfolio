@@ -30,5 +30,22 @@ export const experience: Experience[] = [
       "Atuação no desenvolvimento, manutenção e customização de lojas virtuais em plataformas como Linx Commerce, Nuvemshop, Shopify e Uappi, criando experiências digitais otimizadas e alinhadas aos objetivos estratégicos do negócio. Experiência em projetos de Headless Commerce, desenvolvendo front-ends desacoplados com Vue.js 3, Nuxt.js e Tailwind CSS, com foco em performance, escalabilidade, flexibilidade e excelência na experiência do usuário. Responsável pelo desenvolvimento de integrações, implementação de funcionalidades estratégicas e configuração do Google Tag Manager (GTM), incluindo a criação de eventos personalizados, monitoramento da jornada do usuário e análise de métricas para otimização da conversão e da performance das aplicações.",
     tags: ["Vue.js 3", "Nuxt.js", "Tailwind CSS", "Headless Commerce", "GTM"],
   },
-  // TODO: Agrada Digital (2022 — 2024) e demais experiências — texto chegou cortado.
+  {
+    start: "2022",
+    end: "2024",
+    role: "Front-end engineer",
+    company: "Agrada Digital.",
+    description:
+      "Desenvolvimento de soluções para e-commerce com Vue.js, Nuxt.js, TypeScript e JavaScript, priorizando performance, escalabilidade e experiência do usuário. Atuação em projetos para plataformas líderes do mercado, incluindo Linx Commerce, Nuvemshop, Shopify e Uappi, entregando funcionalidades, integrações e otimizações que impulsionam resultados de negócio.",
+    tags: ["E-commerce", "SEO", "Performance", "Marketing", "GTM"],
+  },
+  {
+    start: "2021",
+    end: "2022",
+    role: "Front End Developer",
+    company: "Agência HardCore",
+    description:
+      "Responsável pela criação e desenvolvimento de layouts de páginas web responsivos, seguindo as melhores práticas de design de interface e experiência do usuário. Atuação na implementação de códigos HTML, CSS e JavaScript de alta qualidade, garantindo funcionalidade, organização, eficiência e compatibilidade das aplicações. Aplicação de técnicas de SEO para aprimorar a visibilidade e o posicionamento dos sites nos resultados de pesquisa. Colaboração com diferentes membros da equipe para assegurar a integração adequada entre o front-end, back-end e demais áreas da loja virtual, contribuindo para o cumprimento de prazos e orçamento dos projetos. Atuação também na otimização do desempenho das páginas, incluindo melhorias na velocidade de carregamento, tempo de resposta, estabilidade e escalabilidade das aplicações.",
+    tags: ["E-commerce", "SEO", "Performance", "Marketing", "GTM"],
+  },
 ];
