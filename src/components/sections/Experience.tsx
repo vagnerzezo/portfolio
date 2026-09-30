@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { TimelineReveal } from "@/components/motion/TimelineReveal";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -7,14 +8,25 @@ import { site } from "@/content/site";
 
 /*
  * Layout em duas colunas no desktop: à esquerda o rótulo, o título display e o link do currículo
- * (preso no pé da coluna); à direita a linha do tempo, cada cargo numa grade data | texto | tags.
+ * (coluna sticky, acompanha a pilha de cargos em vez de sumir e deixar um vão); à direita a linha
+ * do tempo, cada cargo numa grade data | texto | tags.
  * No mobile tudo empilha e as tags descem para baixo da descrição.
+ *
+ * Efeito "pilha" (md+, só sem movimento reduzido): cada cargo é `sticky` com um `top` que cresce
+ * pelo índice (--stack-index), então ao rolar o próximo cargo desliza por cima do anterior e deixa
+ * à mostra só o cabeçalho dele (data, cargo e empresa). O empilhamento é CSS puro: o navegador calcula
+ * o sticky na thread de composição e o componente continua Server Component. O fundo opaco
+ * esconde a descrição do cargo coberto; a divisória vai no topo de cada item para continuar
+ * visível entre os cabeçalhos empilhados.
+ * O último item não tem onde grudar (é o fim da lista); o TimelineReveal "congela" a pilha quando
+ * ele chega no lugar dele, para os três saírem juntos em vez de o último cobrir os outros.
+ * A divisória de baixo fica no último item (last:border-b).
  */
 export function Experience() {
   return (
     <section id="experiencia" aria-labelledby="experiencia-title" className="scroll-mt-20 py-28 md:py-40">
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="grid content-start gap-8 lg:col-span-3 lg:flex lg:flex-col lg:justify-between">
+        <div className="grid content-start gap-8 lg:sticky lg:top-[7.5rem] lg:col-span-3 lg:flex lg:flex-col lg:self-start">
           <div className="grid gap-8">
             <SectionLabel index={4}>Experiência</SectionLabel>
             <h2
@@ -36,15 +48,21 @@ export function Experience() {
         </div>
 
         <TimelineReveal className="lg:col-span-9">
-          <ol className="grid border-t border-line">
-            {experience.map((job) => {
+          <ol className="grid">
+            {experience.map((job, index) => {
               const current = job.end === null;
               return (
                 <li
                   key={`${job.company}-${job.start}-${job.role}`}
                   data-timeline-item
-                  className="group grid gap-4 border-b border-line py-4 pl-4 md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8"
+                  style={{ "--stack-index": index } as CSSProperties}
+                  className="group relative grid content-start gap-4 border-t border-line last:border-b bg-ink-900 py-4 pl-4 md:top-[calc(5.5rem+var(--stack-index)*9rem)] md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8 md:motion-safe:sticky"
                 >
+                  {/* Trilho da linha do tempo por cargo: com a pilha, uma linha única no <ol> apareceria
+                      acima do primeiro cargo preso; dentro de cada item ela acompanha o card. */}
+                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-px bg-line">
+                    <span data-timeline-line className="block h-full w-full origin-top bg-accent" />
+                  </span>
                   <div className="grid content-start gap-2 font-mono text-xs tracking-[0.08em] text-muted md:row-span-2">
                     <p>
                       {job.start} — {job.end ?? "Atual"}
