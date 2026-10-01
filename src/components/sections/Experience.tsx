@@ -22,7 +22,9 @@ import { site } from "@/content/site";
  * ele chega no lugar dele, para os três saírem juntos em vez de o último cobrir os outros.
  * A divisória de baixo fica no último item (last:border-b).
  *
- * No mobile o efeito é "cobrir": todos os cargos grudam no mesmo top fixo (abaixo do header) e o
+ * No mobile o título "Onde já trabalhei" fica sticky logo abaixo do header (4.5rem) e os cargos grudam
+ * logo abaixo dele: 4.5rem + 6.75rem do bloco do título (h2 no mínimo do clamp, 3rem) = 11.25rem.
+ * Se o bloco do título mudar de altura, ajuste esse top. O efeito é "cobrir": todos os cargos grudam no mesmo top fixo e o
  * próximo desliza por cima do anterior. Cards mais altos que a tela têm o fim da descrição coberto
  * antes de aparecer (decisão de design: top fixo em vez de top calculado pela altura).
  */
@@ -30,8 +32,11 @@ export function Experience() {
   return (
     <section id="experiencia" aria-labelledby="experiencia-title" className="scroll-mt-20 py-28 md:py-40">
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="grid content-start gap-8 lg:sticky lg:top-[7.5rem] lg:col-span-3 lg:flex lg:flex-col lg:self-start">
-          <div className="grid gap-8">
+        <div
+          data-timeline-title
+          className="grid content-start gap-8 max-md:sticky max-md:top-18 max-md:z-10 max-md:-mb-12 max-md:gap-4 max-md:bg-ink-900 max-md:py-4 lg:sticky lg:top-[7.5rem] lg:col-span-3 lg:flex lg:flex-col lg:self-start"
+        >
+          <div className="grid gap-8 max-md:gap-3">
             <SectionLabel index={4}>Experiência</SectionLabel>
             <h2
               id="experiencia-title"
@@ -60,7 +65,7 @@ export function Experience() {
                   key={`${job.company}-${job.start}-${job.role}`}
                   data-timeline-item
                   style={{ "--stack-index": index } as CSSProperties}
-                  className="group relative grid content-start gap-4 border-t border-line last:border-b bg-ink-900 py-4 pl-4 max-md:top-20 md:top-[calc(5.5rem+var(--stack-index)*9rem)] md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8 motion-safe:sticky"
+                  className="group relative grid content-start gap-4 border-t border-line last:border-b bg-ink-900 py-4 pl-4 max-md:top-[11.25rem] md:top-[calc(5.5rem+var(--stack-index)*9rem)] md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8 motion-safe:sticky"
                 >
                   {/* Trilho da linha do tempo por cargo: com a pilha, uma linha única no <ol> apareceria
                       acima do primeiro cargo preso; dentro de cada item ela acompanha o card. */}

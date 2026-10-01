@@ -62,6 +62,14 @@ export function TimelineReveal({ children, className = "" }: { children: ReactNo
       mm.add(`${MEDIA.motionOK} and ${MEDIA.md}`, () =>
         createStackRelease(gsap.utils.toArray<HTMLElement>("[data-timeline-item]")),
       );
+
+      // Mobile: o título da seção (sticky, fora deste componente) solta quando o último cargo chega
+      // embaixo dele e sobe junto, em vez de ficar preso até o fim da seção.
+      mm.add(`${MEDIA.motionOK} and ${MEDIA.belowMd}`, () => {
+        const title = root.current!.closest("section")?.querySelector<HTMLElement>("[data-timeline-title]");
+        const last = gsap.utils.toArray<HTMLElement>("[data-timeline-item]").at(-1);
+        if (title && last) return createTitleRelease(title, last);
+      });
     },
     { scope: root },
   );
@@ -131,6 +139,57 @@ function createStackRelease(items: HTMLElement[]) {
   return () => {
     ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
     ScrollTrigger.removeEventListener("refresh", onRefresh);
+    restore();
+  };
+}
+
+/*
+ * Mesmo truque da pilha, aplicado ao título no mobile: quando o último cargo chega no `top` dele
+ * (logo abaixo do título), o título deixa de ser sticky e vira `relative` com um `top` que o
+ * deixa colado em cima do último cargo; dali em diante os dois rolam juntos. O último cargo não
+ * se move com o sticky (é o fim da lista), então a posição dele no layout é a posição final.
+ */
+function createTitleRelease(title: HTMLElement, last: HTMLElement) {
+  const cssTop = (el: HTMLElement) => parseFloat(getComputedStyle(el).top);
+  let released = false;
+
+  const release = () => {
+    if (released) return;
+    released = true;
+    title.style.position = "relative";
+    title.style.top = "0px";
+    // Distância no layout entre o título (posição natural) e o topo do último cargo, sem o `y` da
+    // animação de entrada; o título fica a uma altura dele acima do cargo.
+    const lastTop = last.getBoundingClientRect().top - Number(gsap.getProperty(last, "y"));
+    const gap = lastTop - title.offsetHeight - title.getBoundingClientRect().top;
+    title.style.top = `${gap}px`;
+  };
+
+  const restore = () => {
+    if (!released) return;
+    released = false;
+    title.style.position = "";
+    title.style.top = "";
+  };
+
+  const trigger = ScrollTrigger.create({
+    trigger: last,
+    start: () => `top ${cssTop(last) + Number(gsap.getProperty(last, "y"))}px`,
+    end: "max",
+    onEnter: release,
+    onLeaveBack: restore,
+  });
+  const onRefreshInit = () => restore();
+  const onRefresh = () => {
+    if (trigger.progress > 0) release();
+  };
+  ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
+  ScrollTrigger.addEventListener("refresh", onRefresh);
+
+  return () => {
+    ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
+    ScrollTrigger.removeEventListener("refresh", onRefresh);
+    trigger.kill();
     restore();
   };
 }

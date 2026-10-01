@@ -19,6 +19,7 @@ export const MEDIA = {
   desktop: "(min-width: 1024px)",
   // Mesmos limites do breakpoint `md` do Tailwind (48rem).
   md: "(min-width: 768px)",
+  belowMd: "(max-width: 767.98px)",
   finePointer: "(hover: hover) and (pointer: fine)",
 } as const;
 
