@@ -19,17 +19,55 @@ export const projects: Project[] = [
     slug: "kr",
     name: "KR Representação",
     context: "Pessoal",
+    summary: "Site institucional de uma representação de moda e streetwear, feito do zero em Nuxt 3.",
     description:
       "Site institucional de uma representação comercial gaúcha de marcas de moda e streetwear (QIX, West Coast, Orange, entre outras), que desenvolvi do zero. Usei Nuxt 3 com roteamento por arquivos e componentes Vue 3 em Composition API (<script setup>), um por seção. O layout é responsivo e mobile-first, com menu animado, vitrine filtrada por marca com estado reativo (ref/computed) e CTAs integrados ao WhatsApp. Estilizei com Tailwind CSS v4 e servi as imagens em WebP e SVG para ganhar performance.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Site institucional de uma representação comercial gaúcha de marcas de moda e streetwear (QIX, West Coast, Orange, entre outras), que desenvolvi do zero.",
+      },
+      {
+        title: "Arquitetura",
+        body: "Usei Nuxt 3 com roteamento por arquivos e componentes Vue 3 em Composition API (<script setup>), um por seção.",
+      },
+      {
+        title: "Interface",
+        body: "O layout é responsivo e mobile-first, com menu animado, vitrine filtrada por marca com estado reativo (ref/computed) e CTAs integrados ao WhatsApp.",
+      },
+      {
+        title: "Performance",
+        body: "Estilizei com Tailwind CSS v4 e servi as imagens em WebP e SVG para ganhar performance.",
+      },
+    ],
     tags: ["Vue.js", "Nuxt.js", "Tailwind CSS"],
     image: print("kr", "KR Representação"),
   },
   {
     slug: "superepi",
     name: "Super Epi",
-    context: "Agência Agliardi",
+    context: "Manux",
+    summary: "Loja headless de EPIs numa plataforma Nuxt multi-loja com cache na edge.",
     description:
       "Front-end headless da Super EPI, loja de equipamentos de proteção individual. Atuei numa plataforma multi-loja em que cada cliente é uma aplicação Nuxt fina, que estende layers modulares compartilhadas (catálogo, checkout, conta, CMS, SEO e analytics), com dados vindos de uma API Laravel integrada à Linx. A renderização é SSR com cache de HTML na edge (Cloudflare Workers) e o conteúdo é montado em blocos pelo CMS. O projeto inclui SEO técnico (JSON-LD, canonical, robots), GTM com Consent Mode v2 e server-side tagging, monitoramento com Sentry e orçamento de performance com Lighthouse diário em CI.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Front-end headless da Super EPI, loja de equipamentos de proteção individual.",
+      },
+      {
+        title: "Arquitetura",
+        body: "Atuei numa plataforma multi-loja em que cada cliente é uma aplicação Nuxt fina, que estende layers modulares compartilhadas (catálogo, checkout, conta, CMS, SEO e analytics), com dados vindos de uma API Laravel integrada à Linx. A renderização é SSR com cache de HTML na edge (Cloudflare Workers) e o conteúdo é montado em blocos pelo CMS.",
+      },
+      {
+        title: "SEO e analytics",
+        body: "O projeto inclui SEO técnico (JSON-LD, canonical, robots) e GTM com Consent Mode v2 e server-side tagging.",
+      },
+      {
+        title: "Qualidade",
+        body: "Monitoramento com Sentry e orçamento de performance com Lighthouse diário em CI.",
+      },
+    ],
     tags: ["Manux Headless", "Nuxt.js", "TypeScript", "Performance"],
     image: print("superepi", "Super Epi"),
   },
@@ -65,8 +103,23 @@ export const projects: Project[] = [
     slug: "zanque",
     name: "Zanque",
     context: "Agência Agliardi",
+    summary: "E-commerce headless na Uappi, com lista de casamento feita em conjunto com a plataforma.",
     description:
       "E-commerce headless na Uappi, com front-end desacoplado em Nuxt e TypeScript e foco em SEO e performance. Participei do desenvolvimento da loja: codifiquei o front-end, deixei o layout responsivo e implementei melhorias de SEO. Criei a lista de casamento, funcionalidade desenvolvida em conjunto com a Uappi, e componentes reutilizáveis pensados para renderização no servidor e no cliente, além da integração com o CMS da plataforma.",
+    details: [
+      {
+        title: "O projeto",
+        body: "E-commerce headless na Uappi, com front-end desacoplado em Nuxt e TypeScript e foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Participei do desenvolvimento da loja: codifiquei o front-end, deixei o layout responsivo e implementei melhorias de SEO.",
+      },
+      {
+        title: "Destaques",
+        body: "Criei a lista de casamento, funcionalidade desenvolvida em conjunto com a Uappi, e componentes reutilizáveis pensados para renderização no servidor e no cliente, além da integração com o CMS da plataforma.",
+      },
+    ],
     tags: UAPPI_HEADLESS,
     image: print("zanque", "Zanque"),
   },
@@ -74,8 +127,23 @@ export const projects: Project[] = [
     slug: "pet-jr",
     name: "Pet JR",
     context: "Agência Agliardi",
+    summary: "E-commerce headless na Uappi, com quiz que recomenda produtos para cada pet.",
     description:
       "E-commerce headless na Uappi, com front-end desacoplado em Nuxt e TypeScript e foco em SEO e performance. Participei do desenvolvimento da loja: codifiquei o front-end, deixei o layout responsivo e implementei melhorias de SEO. Criei um quiz em que o cliente informa raça, porte e idade do pet e recebe recomendações de produtos, além de componentes reutilizáveis pensados para renderização no servidor e no cliente e da integração com o CMS da Uappi.",
+    details: [
+      {
+        title: "O projeto",
+        body: "E-commerce headless na Uappi, com front-end desacoplado em Nuxt e TypeScript e foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Participei do desenvolvimento da loja: codifiquei o front-end, deixei o layout responsivo e implementei melhorias de SEO.",
+      },
+      {
+        title: "Destaques",
+        body: "Criei um quiz em que o cliente informa raça, porte e idade do pet e recebe recomendações de produtos, além de componentes reutilizáveis pensados para renderização no servidor e no cliente e da integração com o CMS da Uappi.",
+      },
+    ],
     tags: UAPPI_HEADLESS,
     image: print("petjr", "Pet JR"),
   },
@@ -83,8 +151,23 @@ export const projects: Project[] = [
     slug: "lebes",
     name: "Lebes",
     context: "Agência Agrada",
+    summary: "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance.",
     description:
       "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance. Atuei na implementação de novas funcionalidades, na otimização de SEO e em melhorias de carregamento, usando Liquid (a linguagem de templates da plataforma), jQuery, HTML e Sass.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Atuei na implementação de novas funcionalidades, na otimização de SEO e em melhorias de carregamento.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid (a linguagem de templates da plataforma), jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("lebes", "Lebes"),
   },
@@ -92,8 +175,23 @@ export const projects: Project[] = [
     slug: "coliseu",
     name: "Coliseu",
     context: "Agência Agrada",
+    summary: "Manutenção e evolução da loja na Linx Commerce.",
     description:
       "Manutenção e evolução da loja na Linx Commerce. Implementei novas funcionalidades, ajustes de SEO e melhorias de performance nos templates da plataforma, trabalhando com Liquid, jQuery, HTML e Sass.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Manutenção e evolução da loja na Linx Commerce.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Implementei novas funcionalidades, ajustes de SEO e melhorias de performance nos templates da plataforma.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid, jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("coliseu", "Coliseu"),
   },
@@ -101,8 +199,23 @@ export const projects: Project[] = [
     slug: "docol",
     name: "Docol",
     context: "Agência Agrada",
+    summary: "Manutenção e evolução da loja na Linx Commerce, com foco em SEO e performance.",
     description:
       "Manutenção e evolução da loja na Linx Commerce, com foco em SEO e performance. Atuei na entrega de novas funcionalidades e na otimização das páginas, escrevendo os templates em Liquid, com jQuery, HTML e Sass.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Manutenção e evolução da loja na Linx Commerce, com foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Atuei na entrega de novas funcionalidades e na otimização das páginas.",
+      },
+      {
+        title: "Stack",
+        body: "Templates em Liquid, com jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("docol", "Docol"),
   },
@@ -110,17 +223,47 @@ export const projects: Project[] = [
     slug: "schumann",
     name: "Schumann",
     context: "Agência Agrada",
+    summary: "Desenvolvimento e manutenção da loja na Linx Commerce.",
     description:
       "Desenvolvimento e manutenção da loja na Linx Commerce. Participei da construção de novas funcionalidades, da otimização de SEO e de melhorias de performance, usando Liquid, jQuery, HTML e Sass sobre a estrutura nativa da plataforma.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Desenvolvimento e manutenção da loja na Linx Commerce.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Participei da construção de novas funcionalidades, da otimização de SEO e de melhorias de performance.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid, jQuery, HTML e Sass sobre a estrutura nativa da plataforma.",
+      },
+    ],
     tags: LINX,
     image: print("schumann", "Schumann"),
   },
   {
     slug: "merito-comercial",
     name: "Merito Comercial",
-    context: "Agência Agliardi",
+    context: "Manux",
+    summary: "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance.",
     description:
       "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance. Atuei na implementação de funcionalidades e na otimização das páginas, trabalhando com Liquid, jQuery, HTML e Sass.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Desenvolvimento e manutenção da loja na Linx Commerce, com foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Atuei na implementação de funcionalidades e na otimização das páginas.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid, jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("meritocomercial", "Merito Comercial"),
   },
@@ -128,8 +271,23 @@ export const projects: Project[] = [
     slug: "millenial-joias",
     name: "Millenial Joias",
     context: "Pessoal",
+    summary: "Loja de joias na Linx Commerce, com foco em SEO e performance.",
     description:
       "Desenvolvimento da loja de joias na Linx Commerce, com foco em SEO e performance. Construí os templates em Liquid, com jQuery, HTML e Sass, implementei as funcionalidades da loja e otimizei SEO e carregamento das páginas.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Desenvolvimento da loja de joias na Linx Commerce, com foco em SEO e performance.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Construí os templates, implementei as funcionalidades da loja e otimizei SEO e carregamento das páginas.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid, jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("millenial", "Millenial Joias"),
   },
@@ -137,8 +295,23 @@ export const projects: Project[] = [
     slug: "multisom",
     name: "Multisom",
     context: "Agência Agrada",
+    summary: "Desenvolvimento e manutenção da loja na Linx Commerce.",
     description:
       "Desenvolvimento e manutenção da loja na Linx Commerce. Atuei em novas funcionalidades, otimização de SEO e melhorias de performance, usando Liquid, a linguagem de templates da plataforma, junto com jQuery, HTML e Sass.",
+    details: [
+      {
+        title: "O projeto",
+        body: "Desenvolvimento e manutenção da loja na Linx Commerce.",
+      },
+      {
+        title: "Minha atuação",
+        body: "Atuei em novas funcionalidades, otimização de SEO e melhorias de performance.",
+      },
+      {
+        title: "Stack",
+        body: "Liquid, a linguagem de templates da plataforma, junto com jQuery, HTML e Sass.",
+      },
+    ],
     tags: LINX,
     image: print("multisom", "Multisom"),
   },
