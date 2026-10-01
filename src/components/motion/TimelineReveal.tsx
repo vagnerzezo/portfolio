@@ -41,8 +41,6 @@ export function TimelineReveal({ children, className = "" }: { children: ReactNo
             gsap.to(batch, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.15, ease: "expo.out" }),
         });
 
-        const releaseStack = createStackRelease(items);
-
         const dots = gsap.utils.toArray<HTMLElement>("[data-timeline-dot]");
         dots.forEach((dot) => {
           dot.classList.add("is-dim");
@@ -56,9 +54,14 @@ export function TimelineReveal({ children, className = "" }: { children: ReactNo
         // Limpeza do matchMedia: se o usuário ativar movimento reduzido, o ponto volta aceso.
         return () => {
           dots.forEach((dot) => dot.classList.remove("is-dim"));
-          releaseStack?.();
         };
       });
+
+      // Só a pilha do md+ precisa ser congelada; no mobile (top fixo) o último cargo cobre os outros.
+      // Bloco próprio para ser desfeito/refeito ao cruzar o breakpoint (girar a tela).
+      mm.add(`${MEDIA.motionOK} and ${MEDIA.md}`, () =>
+        createStackRelease(gsap.utils.toArray<HTMLElement>("[data-timeline-item]")),
+      );
     },
     { scope: root },
   );

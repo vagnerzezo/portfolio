@@ -17,6 +17,8 @@ export const MEDIA = {
   motionOK: "(prefers-reduced-motion: no-preference)",
   reduced: "(prefers-reduced-motion: reduce)",
   desktop: "(min-width: 1024px)",
+  // Mesmos limites do breakpoint `md` do Tailwind (48rem).
+  md: "(min-width: 768px)",
   finePointer: "(hover: hover) and (pointer: fine)",
 } as const;
 

@@ -21,6 +21,10 @@ import { site } from "@/content/site";
  * O último item não tem onde grudar (é o fim da lista); o TimelineReveal "congela" a pilha quando
  * ele chega no lugar dele, para os três saírem juntos em vez de o último cobrir os outros.
  * A divisória de baixo fica no último item (last:border-b).
+ *
+ * No mobile o efeito é "cobrir": todos os cargos grudam no mesmo top fixo (abaixo do header) e o
+ * próximo desliza por cima do anterior. Cards mais altos que a tela têm o fim da descrição coberto
+ * antes de aparecer (decisão de design: top fixo em vez de top calculado pela altura).
  */
 export function Experience() {
   return (
@@ -56,7 +60,7 @@ export function Experience() {
                   key={`${job.company}-${job.start}-${job.role}`}
                   data-timeline-item
                   style={{ "--stack-index": index } as CSSProperties}
-                  className="group relative grid content-start gap-4 border-t border-line last:border-b bg-ink-900 py-4 pl-4 md:top-[calc(5.5rem+var(--stack-index)*9rem)] md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8 md:motion-safe:sticky"
+                  className="group relative grid content-start gap-4 border-t border-line last:border-b bg-ink-900 py-4 pl-4 max-md:top-20 md:top-[calc(5.5rem+var(--stack-index)*9rem)] md:grid-cols-[7rem_1fr_auto] md:gap-x-8 md:py-8 motion-safe:sticky"
                 >
                   {/* Trilho da linha do tempo por cargo: com a pilha, uma linha única no <ol> apareceria
                       acima do primeiro cargo preso; dentro de cada item ela acompanha o card. */}
