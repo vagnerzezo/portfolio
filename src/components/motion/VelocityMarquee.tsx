@@ -61,9 +61,19 @@ export function VelocityMarquee({ items }: { items: string[] }) {
       {items.map((item) => (
         <li key={item} className="flex items-center">
           <span className="px-6 font-display text-5xl italic md:px-10 md:text-7xl">{item}</span>
-          <span aria-hidden="true" className="text-3xl text-accent md:text-5xl">
-            ✳
-          </span>
+          {/* SVG em vez do caractere ✳: no iOS ele vira emoji (quadrado verde) mesmo com cor no CSS. */}
+          <svg
+            aria-hidden="true"
+            viewBox="-12 -12 24 24"
+            className="size-7 shrink-0 text-accent md:size-11"
+          >
+            <path
+              d="M0-10V10M-10 0H10M-7.07-7.07L7.07 7.07M-7.07 7.07L7.07-7.07"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+            />
+          </svg>
         </li>
       ))}
     </ul>
