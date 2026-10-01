@@ -6,7 +6,8 @@ import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
 import { ScrollTrigger } from "@/lib/gsap";
 
-const COUNT = 7000;
+// Celular: metade das partículas; o fill rate (pontos × pixels) é o gargalo na GPU mobile.
+const COUNT = { desktop: 7000, compact: 3500 };
 const CAMERA_Z = 3.1;
 const FOV = 45;
 // Altura visível no plano z = 0 (em unidades do mundo) para a câmera acima.
@@ -104,7 +105,15 @@ const hex = (value: string) =>
     parseInt(value.slice(5, 7), 16) / 255,
   );
 
-function Particles({ triggerId, anchor }: { triggerId: string; anchor: RefObject<HTMLDivElement | null> }) {
+function Particles({
+  triggerId,
+  anchor,
+  count,
+}: {
+  triggerId: string;
+  anchor: RefObject<HTMLDivElement | null>;
+  count: number;
+}) {
   const group = useRef<THREE.Group>(null);
   const points = useRef<THREE.Points>(null);
   const material = useRef<THREE.ShaderMaterial>(null);
@@ -129,10 +138,10 @@ function Particles({ triggerId, anchor }: { triggerId: string; anchor: RefObject
   }, [anchor, size]);
 
   const geometry = useMemo(() => {
-    const positions = new Float32Array(COUNT * 3);
-    const randoms = new Float32Array(COUNT);
-    for (let i = 0; i < COUNT; i++) {
-      const y = 1 - (i / (COUNT - 1)) * 2;
+    const positions = new Float32Array(count * 3);
+    const randoms = new Float32Array(count);
+    for (let i = 0; i < count; i++) {
+      const y = 1 - (i / (count - 1)) * 2;
       const r = Math.sqrt(1 - y * y);
       const theta = GOLDEN_ANGLE * i;
       positions.set([Math.cos(theta) * r, y, Math.sin(theta) * r], i * 3);
@@ -142,7 +151,7 @@ function Particles({ triggerId, anchor }: { triggerId: string; anchor: RefObject
     g.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     g.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 1));
     return g;
-  }, []);
+  }, [count]);
 
   const uniforms = useMemo(
     () => ({
@@ -211,15 +220,18 @@ function Particles({ triggerId, anchor }: { triggerId: string; anchor: RefObject
 export default function HeroSphere({
   triggerId,
   anchor,
+  compact,
   onReady,
 }: {
   triggerId: string;
   anchor: RefObject<HTMLDivElement | null>;
+  compact: boolean;
   onReady: () => void;
 }) {
   const container = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
-  const [dpr, setDpr] = useState(1.75);
+  // Telas de celular têm DPR 3; renderizar a 1.5 já fica nítido para pontos pequenos e custa 4× menos.
+  const [dpr, setDpr] = useState(compact ? 1.5 : 1.75);
 
   // Fora da tela, o loop de render para (frameloop "never"): nada de GPU gasta à toa.
   useEffect(() => {
@@ -239,7 +251,11 @@ export default function HeroSphere({
         aria-hidden="true"
       >
         <PerformanceMonitor onDecline={() => setDpr(1)} />
-        <Particles triggerId={triggerId} anchor={anchor} />
+        <Particles
+          triggerId={triggerId}
+          anchor={anchor}
+          count={compact ? COUNT.compact : COUNT.desktop}
+        />
       </Canvas>
     </div>
   );

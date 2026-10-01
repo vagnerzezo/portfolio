@@ -1,7 +1,7 @@
 /*
  * Esfera estática em SVG: pontos de uma esfera de Fibonacci projetados em 2D, calculados no
- * servidor (determinístico, zero JS no client). É o que aparece no mobile, com movimento
- * reduzido e enquanto o Three.js carrega no desktop.
+ * servidor (determinístico, zero JS no client). É o que aparece com movimento reduzido e
+ * enquanto o Three.js carrega.
  */
 const POINTS = 520;
 const RADIUS = 240;

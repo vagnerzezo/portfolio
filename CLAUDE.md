@@ -29,8 +29,8 @@ O dono do projeto está evoluindo para full stack: **explique decisões de arqui
 4. **Movimento reduzido:** todas as animações usam `gsap.matchMedia()` com
    `(prefers-reduced-motion: no-preference)`. Com movimento reduzido: sem Lenis, sem pin, sem scrub, sem Three.js;
    o conteúdo aparece estático e legível.
-5. **Three.js só no desktop e sob demanda:** `next/dynamic` com `ssr: false`, carregado apenas em telas ≥ 1024px
-   e sem movimento reduzido. Fallback: o SVG estático da esfera.
+5. **Three.js sob demanda:** `next/dynamic` com `ssr: false`, carregado só sem movimento reduzido (em qualquer tela).
+   Abaixo de 1024px roda em modo `compact` (3.500 partículas, DPR ≤ 1.5). Fallback: o SVG estático da esfera.
 6. **Acessibilidade:** HTML semântico (`section` com `aria-labelledby`, `h1` único, hierarquia de headings correta),
    foco visível, botões reais com `aria-label` quando só têm ícone, contraste AA, alvos de toque ≥ 44px.
    Cursor customizado nunca esconde o cursor nativo em teclado/touch.
@@ -138,7 +138,7 @@ Componente `<Logo>` com `fill="none"`, `stroke="currentColor"`, `vector-effect="
 | Contato | Botão magnético (`gsap.quickTo`) | GSAP |
 | Footer | Revelado "por baixo" do conteúdo (efeito cortina) | CSS sticky |
 
-No mobile: sem pin horizontal (cards empilhados), sem cursor custom, sem Three.js.
+No mobile: sem pin horizontal (cards empilhados), sem cursor custom; esfera Three.js em modo `compact`.
 
 ## Formulário de contato (Server Action)
 
