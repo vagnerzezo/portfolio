@@ -107,7 +107,7 @@ Componente `<Logo>` com `fill="none"`, `stroke="currentColor"`, `vector-effect="
 ## Seções (ordem da página)
 
 1. **Header**: logo, nav (Trabalhos, Sobre, Serviços, Contato), pill "Disponível para projetos" com ponto accent.
-   Fica fixo e some ao rolar para baixo / volta ao rolar para cima.
+   Fica fixo e sempre visível (ganha fundo e borda ao sair do topo).
 2. **Hero**: "Vagner / *Zezo*." em Instrument Serif enorme (clamp até ~240px), esfera 3D à direita, avatar
    em preto e branco (`filter: grayscale`) ao lado da frase de apresentação, "Role para explorar".
 3. **TechMarquee**: Vue.js ✳ Nuxt ✳ React ✳ Next.js ✳ TypeScript ✳ Node.js ✳ VTEX ✳ GSAP, serif itálico.
