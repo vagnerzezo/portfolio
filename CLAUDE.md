@@ -138,7 +138,7 @@ Componente `<Logo>` com `fill="none"`, `stroke="currentColor"`, `vector-effect="
 | Contato | Botão magnético (`gsap.quickTo`) | GSAP |
 | Footer | Revelado "por baixo" do conteúdo (efeito cortina) | CSS sticky |
 
-No mobile: sem pin horizontal (cards empilhados), sem cursor custom; esfera Three.js em modo `compact`.
+No mobile: pin horizontal com cards a ~82vw, sem cursor custom; esfera Three.js em modo `compact`.
 
 ## Formulário de contato (Server Action)
 

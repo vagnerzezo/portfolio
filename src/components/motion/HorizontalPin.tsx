@@ -11,9 +11,12 @@ type HorizontalPinProps = {
 };
 
 /*
- * Desktop + movimento liberado: a seção fica fixa (pin) e o scroll vertical move os cards na
- * horizontal. O layout horizontal só é ligado pelo JS (data-horizontal): no HTML do servidor,
- * no mobile e com movimento reduzido os cards ficam empilhados em grid, sem nada escondido.
+ * Movimento liberado (qualquer tela): a seção fica fixa (pin) e o scroll vertical move os cards na
+ * horizontal. No mobile cada card ocupa ~82% da largura, deixando a ponta do próximo à mostra.
+ * O layout horizontal só é ligado pelo JS (data-horizontal): no HTML do servidor e com movimento
+ * reduzido os cards ficam empilhados em grid, sem nada escondido.
+ * A altura do pin usa svh (viewport com as barras do navegador abertas): com dvh, a barra do
+ * Safari aparecendo/sumindo mudaria a altura da seção fixa no meio da rolagem.
  */
 export function HorizontalPin({ total, header, children }: HorizontalPinProps) {
   const root = useRef<HTMLDivElement>(null);
@@ -22,7 +25,7 @@ export function HorizontalPin({ total, header, children }: HorizontalPinProps) {
     () => {
       const mm = gsap.matchMedia();
 
-      mm.add(`${MEDIA.desktop} and ${MEDIA.motionOK}`, () => {
+      mm.add(MEDIA.motionOK, () => {
         const el = root.current!;
         const track = el.querySelector<HTMLElement>("[data-track]")!;
         const viewport = el.querySelector<HTMLElement>("[data-viewport]")!;
@@ -84,13 +87,13 @@ export function HorizontalPin({ total, header, children }: HorizontalPinProps) {
   return (
     <div
       ref={root}
-      className="group flex flex-col gap-12 py-28 md:py-40 data-horizontal:h-dvh data-horizontal:justify-center data-horizontal:gap-10 data-horizontal:py-0"
+      className="group flex flex-col gap-12 py-28 md:py-40 data-horizontal:h-svh data-horizontal:justify-center data-horizontal:gap-10 data-horizontal:py-0"
     >
       <div className="shell flex items-end justify-between gap-6">
         {header}
         {/* Contador e barra só existem no modo horizontal (no grid empilhado não fazem sentido). */}
-        <div aria-hidden="true" className="hidden w-56 gap-4 pb-2 group-data-horizontal:grid">
-          <p className="justify-self-end font-mono text-2xl text-faded tabular-nums">
+        <div aria-hidden="true" className="hidden w-32 shrink-0 gap-4 pb-2 group-data-horizontal:grid md:w-56">
+          <p className="justify-self-end font-mono text-lg text-faded tabular-nums md:text-2xl">
             <span data-counter className="text-bone">
               01
             </span>{" "}
